@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<div id="map"></div>
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script>
+new maplibregl.Map({
+  container: "map",
+  style: {
+    version: 8,
+    sources: { osm: { type: "vector", url: "https://tiles.openfreemap.org/planet" } },
+    layers: [
+      { id: "bg",        type: "background",     paint: { "background-color": "#000" } },
+      { id: "landuse",   type: "fill",   source: "osm", "source-layer": "landuse",       paint: { "fill-color": "#0d0d0d" } },
+      { id: "park",      type: "fill",   source: "osm", "source-layer": "park",          paint: { "fill-color": "#140505" } },
+      { id: "water",     type: "fill",   source: "osm", "source-layer": "water",         paint: { "fill-color": "#220000" } },
+      { id: "roads",     type: "line",   source: "osm", "source-layer": "transportation",paint: { "line-color": "#9b0000", "line-width": ["interpolate",["linear"],["zoom"],8,0.3,15,2.5] } },
+      { id: "buildings", type: "fill-extrusion", source: "osm", "source-layer": "building", minzoom: 13,
+        paint: { "fill-extrusion-color": "#4a0000", "fill-extrusion-height": ["get","render_height"], "fill-extrusion-base": ["get","render_min_height"], "fill-extrusion-opacity": 0.9 } }
+    ]
+  },
+  center: [77.15, 28.55], zoom: 10.5, pitch: 60, bearing: -20,
+  maxPitch: 80, maxBounds: [[76.7,27.9],[77.7,29.0]], attributionControl: false
+});
+</script>

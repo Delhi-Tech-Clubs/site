@@ -13,3 +13,15 @@
     height: 100vh;
     background: #000;
 }
+
+.logo {
+    width: 28px;
+    height: auto;
+    cursor: pointer;
+    display: block;
+    filter: drop-shadow(0 0 6px #e10600);
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 12px #e10600);
+}

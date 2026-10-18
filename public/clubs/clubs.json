@@ -1,7 +1,32 @@
 [
   {
     "name": "Robo Nexus",
-    "pos": [77.06321246267103, 28.4338402575168],
+    "pos": [77.06304, 28.43377],
     "logo": "/clubs/rn.svg"
+  },
+  {
+    "name": "Tech Syndicate",
+    "pos": [77.06334, 28.43413],
+    "logo":"/clubs/ts.svg"
+  },
+  {
+    "name": "Byte",
+    "pos": [77.10707246223143, 28.69084169826507],
+    "logo": "/clubs/byte.svg"
+  },
+  {
+    "name": "Core",
+    "pos": [77.04740459268443, 28.605954853829886],
+    "logo": "/clubs/core.svg"
+  },
+  {
+    "name": "Tinker Verse",
+    "pos": [77.05858150270093, 28.560654852740395],
+    "logo": "/clubs/tk.svg"
+  },
+  {
+    "name": "Paradigm",
+    "pos": [77.33694505858243, 28.543644119683243],
+    "logo": "/clubs/p.svg"
   }
 ]

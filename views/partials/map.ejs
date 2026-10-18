@@ -2,7 +2,7 @@
 <div id="map"></div>
 <script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script>
-new maplibregl.Map({
+const map = new maplibregl.Map({
   container: "map",
   style: {
     version: 8,
@@ -20,4 +20,23 @@ new maplibregl.Map({
   center: [77.15, 28.55], zoom: 10.5, pitch: 60, bearing: -20,
   maxPitch: 80, maxBounds: [[76.7,27.9],[77.7,29.0]], attributionControl: false
 });
+
+const home = { center: [77.15, 28.55], zoom: 10.5, pitch: 60, bearing: -20 };
+
+map.on("click", () => map.flyTo({ ...home, duration: 1500 }));
+
+fetch("/clubs/clubs.json")
+  .then(r => r.json())
+  .then(clubs => clubs.forEach(club => {
+    const el = document.createElement("img");
+    el.className = "logo";
+    el.src = club.logo;
+    el.addEventListener("click", e => {
+      e.stopPropagation();
+      map.flyTo({ center: club.pos, zoom: 15.5, pitch: 65, duration: 1500 });
+    });
+    new maplibregl.Marker({ element: el })
+      .setLngLat(club.pos)
+      .addTo(map);
+  }));
 </script>

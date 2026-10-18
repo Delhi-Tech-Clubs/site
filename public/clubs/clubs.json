@@ -28,5 +28,10 @@
     "name": "Paradigm",
     "pos": [77.33694505858243, 28.543644119683243],
     "logo": "/clubs/p.svg"
+  },
+  {
+    "name": "Wartex",
+    "pos": [ 77.304772, 28.647071],
+    "logo": "/clubs/wartex.svg"
   }
 ]

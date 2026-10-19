@@ -38,5 +38,10 @@
     "name": "Wartex",
     "pos": [ 77.304772, 28.647071],
     "logo": "/clubs/wartex.svg"
+  },
+  {
+    "name": "Ncrypt",
+    "pos": [77.07563173156653, 28.46393339135371],
+    "logo": "/clubs/n.svg"
   }
 ]
